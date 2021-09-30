@@ -7,16 +7,37 @@
      <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 
      <!-- Stylesheet Initialization -->
-     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="css/style.css">
 
     <title>A-Frame Project Jacob Amin</title>
   </head>
   <body>
     <a-scene>
-      <a-assets>
-        <a-asset-item id="DK" src="models/dk/scene.gltf"></a-asset-item>
-      </a-assets>
-      <a-entity gltf-model="#DK"></a-entity>
+
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 1; depth: 0.1; height: 12;"
+        position="-1 -2 -3"
+        rotation="91 0 0"
+        material="color: #eb1e56">
+      </a-entity>
+
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 1; depth: 0.1; height: 10;"
+        position="-1 0 -2"
+        rotation="85 0 0"
+        material="color: #eb1e56">
+      </a-entity>
+
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 1; depth: 0.1; height: 10;"
+        position="-1 2 -3"
+        rotation="93 0 0"
+        material="color: #eb1e56">
+      </a-entity>
+
       <a-sky color="#262626"></a-sky>
     </a-scene>
   </body>
