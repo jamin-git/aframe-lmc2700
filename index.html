@@ -221,11 +221,43 @@
     <a-entity
       gltf-model="#barrel"
       position="-1.5 6.4 -5.2"
-      rotation="90 0 0"
+      rotation="0 90 90"
       scale="0.75 0.75 0.75"
-      animation="property: position; to: 1.5 6.4 -5.2; dur: 3000;"
-      animation__2="property: rotation; to: 0 0 0; delay: 3000; dur: 3000;">
-    </a-entity>
+
+      
+      animation="property: position; from: -1.5 6.4 -5.2; to: .5 6.4 -5.2; dur: 2000;"
+      animation__2="property: position; from: .4 6.4 -5.2; to: 4 6.1 -5.2; delay: 2000; dur: 2000;"
+      animation__3="property: position; from: 4 6.1 -5.2; to: 4 6.1 -4.2; delay: 4000; dur: 1000;"
+      animation__4="property: position; from: 4 6.1 -4.2; to: 4 5.1 -4.2; delay: 5000; dur: 1000;"
+      animation__5="property: rotation; from: 0 90 90; to: 360 90 90; dur: 4000;"
+      
+      animation__6="property: position; from: 4 5.1 -4.2; to: -3.5 4.7 -4.2; delay: 6000; dur: 3000"
+      animation__7="property: position; from: -3.5 4.7 -4.2; to: -3.5 4.7 -3.2; delay: 9000; dur: 1000"
+      animation__8="property: position; from: -3.5 4.7 -3.2; to: -3.5 3.5 -3.2; delay: 10000; dur: 1000"
+      animation__9="property: rotation; from: 360 90 90; to: 0 90 90; delay: 6000; dur: 3000;"
+      
+      animation__10="property: position; from: -3.5 3.5 -3.2; to: 3.9 3.1 -3.2; delay: 11000; dur: 3000"
+      animation__11="property: position; from: 3.9 3.1 -3.2; to: 3.9 3.1 -2.2; delay: 14000; dur: 1000"
+      animation__12="property: position; from: 3.9 3.1 -2.2; to: 3.9 2.1 -2.2; delay: 15000; dur: 1000"
+      animation__13="property: rotation; from: 0 90 90; to: 360 90 90; delay: 11000; dur: 3000;"
+
+      animation__14="property: position; from: 3.9 2.1 -2.2; to: -3.5 1.7 -2.2; delay: 16000; dur: 3000"
+      animation__15="property: position; from: -3.5 1.7 -2.2; to: -3.5 1.7 -1.2; delay: 19000; dur: 1000"
+      animation__16="property: position; from: -3.5 1.7 -1.2; to: -3.5 0.5 -1.2; delay: 20000; dur: 1000"
+      animation__17="property: rotation; from: 360 90 90; to: 0 90 90; delay: 16000; dur: 3000;"
+
+      animation__18="property: position; from: -3.5 0.5 -1.2; to: 3.9 0.1 -1.2; delay: 21000; dur: 3000"
+      animation__19="property: position; from: 3.9 0.1 -1.2; to: 3.9 0.1 -0.2; delay: 24000; dur: 1000"
+      animation__20="property: position; from: 3.9 0.1 -0.2; to: 3.9 -0.8 -0.2; delay: 25000; dur: 1000"
+      animation__21="property: rotation; from: 0 90 90; to: 360 90 90; delay: 21000; dur: 3000;"
+
+      animation__22="property: position; from: 3.9 -0.8 -0.2; to: 0.4 -1.1 -0.2; delay: 26000 dur: 2000;"
+      animation__23="property: position; from: 0.4 -1.1 -0.2; to: -2 -1.1 -0.2; delay: 28000; dur: 2000;"
+      animation__24="property: position; from: -2 -1.1 -0.2; to: -2 -1.1 1.2; delay: 30000; dur: 1000;"
+      animation__25="property: position; from: -2 -1.1 1.2; to: -2 -3.1 1.2; delay: 31000; dur: 2000;"
+      animation__26="property: rotation; from: 360 90 90; to: 0 90 90; delay: 26000; dur: 4000;"
+      
+      ></a-entity>
 
       <a-camera position="0 3 10"></a-camera>
       <a-sky color="#262626"></a-sky>
