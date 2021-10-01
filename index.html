@@ -9,35 +9,225 @@
      <!-- Stylesheet Initialization -->
      <link rel="stylesheet" href="css/style.css">
 
+     <!-- JS Initialization -->
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
     <title>A-Frame Project Jacob Amin</title>
   </head>
   <body>
-    <a-scene>
-
+    <a-scene renderer="colorManagement: true">
+      <a-assets>
+        <a-asset-item id="DK" src="models/dk/scene.gltf"></a-asset-item>
+        <a-asset-item id="barrel" src="models/barrel/scene.gltf"></a-asset-item>
+        <a-asset-item id="ladder" src="models/ladder/scene.gltf"></a-asset-item>
+      </a-assets>
+      
+      <!-- Donkey Kong Model -->
+      <a-entity 
+        gltf-model="#DK"
+        animation-mixer="clip: *"
+        position="-3.2 6.6 -5"
+        scale="0.008 0.008 0.008a">
+      </a-entity>
+      
+      <!-- Bottom Platform -->
       <a-entity
         id="box-platform"
-        geometry="primitive: box; width: 1; depth: 0.1; height: 12;"
-        position="-1 -2 -3"
-        rotation="91 0 0"
+        geometry="primitive: box; width: 6; depth: 0.1; height: 1;"
+        position="-3 -1.5 0"
+        rotation="90 90 90"
         material="color: #eb1e56">
       </a-entity>
-
+      
       <a-entity
         id="box-platform"
-        geometry="primitive: box; width: 1; depth: 0.1; height: 10;"
-        position="-1 0 -2"
-        rotation="85 0 0"
+        geometry="primitive: box; width: 6; depth: 0.1; height: 1;"
+        position="2.9 -1.3 0"
+        rotation="86 90 90"
         material="color: #eb1e56">
       </a-entity>
-
+      
+      <!-- Second Platform -->
       <a-entity
         id="box-platform"
-        geometry="primitive: box; width: 1; depth: 0.1; height: 10;"
-        position="-1 2 -3"
-        rotation="93 0 0"
+        geometry="primitive: box; width: 10; depth: 0.1; height: 1;"
+        position="-1 0 -1"
+        rotation="93 90 90"
         material="color: #eb1e56">
       </a-entity>
+      
+      <!-- Third Platform -->
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 10; depth: 0.1; height: 1;"
+        position="1 1.5 -2"
+        rotation="87 90 90"
+        material="color: #eb1e56">
+      </a-entity>
+      
+      <!-- Fourth Platform -->
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 10; depth: 0.1; height: 1;"
+        position="-1 3 -3"
+        rotation="93 90 90"
+        material="color: #eb1e56">
+      </a-entity>
+      
+      <!-- Fifth Platform -->
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 10; depth: 0.1; height: 1;"
+        position="1 4.5 -4"
+        rotation="87 90 90"
+        material="color: #eb1e56">
+      </a-entity>
+      
+      <!-- Sixth Platform -->
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 6; depth: 0.1; height: 1;"
+        position="-3 6 -5"
+        rotation="90 90 90"
+        material="color: #eb1e56">
+      </a-entity>
+      
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 5; depth: 0.1; height: 1;"
+        position="2.45 5.82 -5"
+        rotation="94 90 90"
+        material="color: #eb1e56">
+      </a-entity>
+      
+      <!-- Barrels -->
 
+    <a-entity
+      gltf-model="#barrel"
+      position="-5.5 6 -5"
+      rotation="0 0 0"
+      scale="0.75 0.75 0.75">
+    </a-entity>
+    
+    <a-entity
+      gltf-model="#barrel"
+      position="-4.8 6 -5"
+      rotation="0 0 0"
+      scale="0.75 0.75 0.75">
+    </a-entity>
+    
+    <a-entity
+      gltf-model="#barrel"
+      position="-5.5 7 -5"
+      rotation="0 0 0"
+      scale="0.75 0.75 0.75">
+    </a-entity>
+    
+    <a-entity
+      gltf-model="#barrel"
+      position="-4.8 7 -5"
+      rotation="0 0 0"
+      scale="0.75 0.75 0.75">
+    </a-entity>
+      <!-- <a-entity
+        id="dk-barrel"
+        geometry="primitive: cylinder; radius: 0.3; height: .8;"
+        position="-5.5 6.4 0"
+        rotation="0 0 0"
+        material="color: #8a3b00">
+      </a-entity>
+      
+      <a-entity
+        id="dk-barrel"
+        geometry="primitive: cylinder; radius: 0.3; height: .8;"
+        position="-4.8 6.4 0"
+        rotation="0 0 0"
+        material="color: #8a3b00">
+      </a-entity>
+      
+      <a-entity
+        id="dk-barrel"
+        geometry="primitive: cylinder; radius: 0.3; height: .8;"
+        position="-5.5 7.25 0"
+        rotation="0 0 0"
+        material="color: #8a3b00">
+      </a-entity>
+      
+      <a-entity
+        id="dk-barrel"
+        geometry="primitive: cylinder; radius: 0.3; height: .8;"
+        position="-4.8 7.25 0"
+        rotation="0 0 0"
+        material="color: #8a3b00">
+      </a-entity> -->
+
+      <!-- Oil Barrel -->
+      <a-text 
+        value="OIL"
+        position="-5.7 -.9 .3"
+        color= "#4ac5fe">
+      </a-text>
+      <a-entity
+        id="dk-barrel"
+        geometry="primitive: cylinder; radius: 0.3; height: .8;"
+        position="-5.5 -1 0"
+        rotation="0 0 0"
+        material="color: #232ef9">
+      </a-entity>
+
+    <!-- Ladders -->
+    
+    <!-- Right Side -->
+    <a-entity
+      gltf-model="#ladder"
+      position="3 -1.2 -.5"
+      scale=".002 .001 .002">
+    </a-entity>
+
+    <a-entity
+      gltf-model="#ladder"
+      position="3 1.6 -2.5"
+      scale=".002 .0012 .002">
+    </a-entity>
+
+    <a-entity
+      gltf-model="#ladder"
+      position="3 4.7 -4.5"
+      scale=".002 .001 .002">
+    </a-entity>
+
+    <!-- Left Side -->
+    <a-entity
+      gltf-model="#ladder"
+      position="-3 0.1 -1.5"
+      scale=".002 .0012 .002">
+    </a-entity>
+
+    <a-entity
+      gltf-model="#ladder"
+      position="-3 3.1 -3.5"
+      scale=".002 .0012 .002">
+    </a-entity>
+
+    <!-- Middle Section -->
+    <a-entity
+      gltf-model="#ladder"
+      position="0 -0.1 -1.5"
+      scale=".002 .00151 .002">
+    </a-entity>
+
+
+    <!-- Animated Barrel -->
+    <a-entity
+      gltf-model="#barrel"
+      position="-1.5 6.4 -5.2"
+      rotation="90 0 0"
+      scale="0.75 0.75 0.75"
+      animation="property: position; to: 1.5 6.4 -5.2; dur: 3000;"
+      animation__2="property: rotation; to: 0 0 0; delay: 3000; dur: 3000;">
+    </a-entity>
+
+      <a-camera position="0 3 10"></a-camera>
       <a-sky color="#262626"></a-sky>
     </a-scene>
   </body>

@@ -1,0 +1,373 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 593,
+      "max": [
+        0.49208000302314758,
+        0.49208000302314758,
+        1.1995400190353394
+      ],
+      "min": [
+        -0.49208000302314758,
+        -0.49208000302314758,
+        0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 7116,
+      "componentType": 5126,
+      "count": 593,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 593,
+      "max": [
+        1,
+        1,
+        0.093725331127643585,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -0.093719221651554108,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 593,
+      "max": [
+        0.99291998147964478,
+        0.99062001705169678
+      ],
+      "min": [
+        0.0088999997824430466,
+        0.015580000355839729
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1812,
+      "max": [
+        592
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Ozonek (https://sketchfab.com/ozonek)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/117f8e267db04472aba0b039bad1b7d2",
+      "title": "Just a Barrel"
+    },
+    "generator": "Sketchfab-3.19.6",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 7248,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4744,
+      "byteOffset": 7248,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 14232,
+      "byteOffset": 11992,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 9488,
+      "byteOffset": 26224,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 35712,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Material_normal.png"
+    },
+    {
+      "uri": "textures/Material_baseColor.png"
+    },
+    {
+      "uri": "textures/Material_metallicRoughness.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Material",
+      "normalTexture": {
+        "index": 0,
+        "scale": 0.69999998809999997,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "metallicFactor": 1,
+        "metallicRoughnessTexture": {
+          "index": 2,
+          "texCoord": 0
+        },
+        "roughnessFactor": 0.39000000000000001
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "beczka_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "beczka"
+    },
+    {
+      "mesh": 0,
+      "name": "beczka_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        0.46967000000000003,
+        -0.77385000000000004,
+        0.42493000000000003,
+        0,
+        -0.28688000000000008,
+        0.32142000000000009,
+        0.90242999999999995,
+        0,
+        -0.83493000000000006,
+        -0.54575000000000007,
+        -0.071040000000000006,
+        0,
+        -2.5499000000000001,
+        -1.6548800000000001,
+        0.6402000000000001,
+        1
+      ],
+      "name": "Sun"
+    },
+    {
+      "name": "Sun"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        0.95594000000000012,
+        -0.19788000000000003,
+        -0.21686000000000002,
+        0,
+        -0.25747000000000003,
+        -0.21023000000000003,
+        -0.94314000000000009,
+        0,
+        0.14104000000000003,
+        0.95742000000000005,
+        -0.25191000000000002,
+        0,
+        0.71232000000000006,
+        3.8553399999999995,
+        -0.43661000000000005,
+        1
+      ],
+      "name": "Sun.001"
+    },
+    {
+      "name": "Sun.001"
+    },
+    {
+      "children": [
+        10
+      ],
+      "matrix": [
+        0.95035999999999998,
+        -0.30692000000000008,
+        0.051210000000000012,
+        0,
+        -0.30018000000000006,
+        -0.8609500000000001,
+        0.41068000000000005,
+        0,
+        -0.081960000000000019,
+        -0.40566000000000002,
+        -0.91034000000000004,
+        0,
+        -0.24658000000000002,
+        -1.9915299999999998,
+        -3.3223599999999998,
+        1
+      ],
+      "name": "Sun.002"
+    },
+    {
+      "name": "Sun.002"
+    },
+    {
+      "children": [
+        12
+      ],
+      "matrix": [
+        -0.91019000000000005,
+        0.41302000000000005,
+        0.031320000000000008,
+        0,
+        -0.41419,
+        -0.90690999999999999,
+        -0.077240000000000017,
+        0,
+        -0.0035000000000000009,
+        -0.083270000000000025,
+        0.99651999999999996,
+        0,
+        0.049450000000000008,
+        0.12358000000000001,
+        8.7285699999999977,
+        1
+      ],
+      "name": "Sun.003"
+    },
+    {
+      "name": "Sun.003"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
+
