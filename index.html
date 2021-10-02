@@ -25,6 +25,8 @@
         <a-asset-item id="ladder" src="models/ladder/scene.gltf"></a-asset-item>
         <!-- "Fireball from Super Mario Bros" (https://skfb.ly/6vIMR) by MagmaMouse is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
         <a-asset-item id="fb" src="models/fireball/scene.gltf"></a-asset-item>
+        <!-- "Pixel Art (Mario)" (https://skfb.ly/LHNu) by Alex_F is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
+        <a-asset-item id="mario" src="models/mario/scene.gltf"></a-asset-item>
       </a-assets>
       
       <!-- Donkey Kong Model -->
@@ -33,6 +35,13 @@
         animation-mixer="clip: *"
         position="-3.2 6.6 -5"
         scale="0.008 0.008 0.008a">
+      </a-entity>
+
+      <!-- Mario Model -->
+      <a-entity 
+        gltf-model="#mario"
+        position="-4.5 -1.4 .1"
+        scale="0.001 0.001 0.003">
       </a-entity>
       
       <!-- Bottom Platform -->
