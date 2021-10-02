@@ -17,9 +17,14 @@
   <body>
     <a-scene renderer="colorManagement: true">
       <a-assets>
+        <!-- "Animated Donkey Kong (Original)" (https://skfb.ly/6CXvX) by Anthony Yanez is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
         <a-asset-item id="DK" src="models/dk/scene.gltf"></a-asset-item>
+        <!-- "Just a Barrel" (https://skfb.ly/QqIQ) by Ozonek is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
         <a-asset-item id="barrel" src="models/barrel/scene.gltf"></a-asset-item>
+        <!-- "Low-Poly Ladder" (https://skfb.ly/6TNMC) by Emma-Lie Kamping is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
         <a-asset-item id="ladder" src="models/ladder/scene.gltf"></a-asset-item>
+        <!-- "Fireball from Super Mario Bros" (https://skfb.ly/6vIMR) by MagmaMouse is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
+        <a-asset-item id="fb" src="models/fireball/scene.gltf"></a-asset-item>
       </a-assets>
       
       <!-- Donkey Kong Model -->
@@ -99,9 +104,25 @@
         rotation="94 90 90"
         material="color: #eb1e56">
       </a-entity>
+
+      <!-- Top Platform -->
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 1.5; depth: 0.1; height: 1;"
+        position="-1 7.5 -6"
+        rotation="90 90 90"
+        material="color: #eb1e56">
+      </a-entity>
+
+      <a-entity
+        id="box-platform"
+        geometry="primitive: box; width: 3; depth: 0.1; height: 1;"
+        position="1.5 8 -6"
+        rotation="90 90 90"
+        material="color: #eb1e56">
+      </a-entity>
       
       <!-- Barrels -->
-
     <a-entity
       gltf-model="#barrel"
       position="-5.5 6 -5"
@@ -129,37 +150,7 @@
       rotation="0 0 0"
       scale="0.75 0.75 0.75">
     </a-entity>
-      <!-- <a-entity
-        id="dk-barrel"
-        geometry="primitive: cylinder; radius: 0.3; height: .8;"
-        position="-5.5 6.4 0"
-        rotation="0 0 0"
-        material="color: #8a3b00">
-      </a-entity>
-      
-      <a-entity
-        id="dk-barrel"
-        geometry="primitive: cylinder; radius: 0.3; height: .8;"
-        position="-4.8 6.4 0"
-        rotation="0 0 0"
-        material="color: #8a3b00">
-      </a-entity>
-      
-      <a-entity
-        id="dk-barrel"
-        geometry="primitive: cylinder; radius: 0.3; height: .8;"
-        position="-5.5 7.25 0"
-        rotation="0 0 0"
-        material="color: #8a3b00">
-      </a-entity>
-      
-      <a-entity
-        id="dk-barrel"
-        geometry="primitive: cylinder; radius: 0.3; height: .8;"
-        position="-4.8 7.25 0"
-        rotation="0 0 0"
-        material="color: #8a3b00">
-      </a-entity> -->
+
 
       <!-- Oil Barrel -->
       <a-text 
@@ -216,6 +207,31 @@
       scale=".002 .00151 .002">
     </a-entity>
 
+    <a-entity
+      gltf-model="#ladder"
+      position=".75 3.5 -3.5"
+      scale=".002 .001 .002">
+    </a-entity>
+
+    <a-entity
+      gltf-model="#ladder"
+      position="-0.75 4.4 -4.5"
+      scale=".002 .001 .002">
+    </a-entity>
+
+    <!-- Top Section -->
+    <a-entity
+      gltf-model="#ladder"
+      position="-1.5 6 -5.5"
+      scale=".002 .003 .002">
+    </a-entity>
+
+    <a-entity
+      gltf-model="#ladder"
+      position="-0.5 6 -5.5"
+      scale=".002 .003 .002">
+    </a-entity>
+
 
     <!-- Animated Barrel -->
     <a-entity
@@ -251,16 +267,57 @@
       animation__20="property: position; from: 3.9 0.1 -0.2; to: 3.9 -0.8 -0.2; delay: 25000; dur: 1000"
       animation__21="property: rotation; from: 0 90 90; to: 360 90 90; delay: 21000; dur: 3000;"
 
-      animation__22="property: position; from: 3.9 -0.8 -0.2; to: 0.4 -1.1 -0.2; delay: 26000 dur: 2000;"
+      animation__22="property: position; from: 3.9 -0.8 -0.2; to: 0.4 -1.1 -0.2; delay: 26000; dur: 2000;"
       animation__23="property: position; from: 0.4 -1.1 -0.2; to: -2 -1.1 -0.2; delay: 28000; dur: 2000;"
       animation__24="property: position; from: -2 -1.1 -0.2; to: -2 -1.1 1.2; delay: 30000; dur: 1000;"
       animation__25="property: position; from: -2 -1.1 1.2; to: -2 -3.1 1.2; delay: 31000; dur: 2000;"
       animation__26="property: rotation; from: 360 90 90; to: 0 90 90; delay: 26000; dur: 4000;"
+
+      animation__27="property: scale; from: 0.75 0.75 0.75; to: 0 0 0; delay 33000; dur: 100;"
       
       ></a-entity>
 
-      <a-camera position="0 3 10"></a-camera>
-      <a-sky color="#262626"></a-sky>
+      <!-- FireBalls -->
+      <a-entity
+        gltf-model="#fb"
+        position="-3 -1 0"
+        rotation="0 90 0"
+        scale="0.05 0.05 0.05"
+
+
+        animation="property: position; from: -3 -1 0; to: -1 -1 0; dir: alternate; loop: true; easing: easeInOutQuad; dur: 4000;"
+        animation__2="property: scale; from: 0.05 0.05 0.05; to: 0.075 0.075 0.075; dir: alternate; loop: true; easing: easeInOutQuad; dur: 6000;"
+      ></a-entity>
+
+      <a-entity
+      gltf-model="#fb"
+      position="2 1.7 -2"
+      rotation="0 90 0"
+      scale="0.075 0.075 0.075"
+
+
+      animation="property: position; from: 2 1.7 -2; to: 0 1.6 -2; dir: alternate; loop: true; easing: easeInOutQuad; dur: 4000;"
+      animation__2="property: scale; from: 0.075 0.075 0.075; to: 0.05 0.05 0.05; dir: alternate; loop: true; easing: easeInOutQuad; dur: 6000;"
+    ></a-entity>
+
+
+    <!-- Text -->
+    <a-text 
+      value="Use WASD to Move!"
+      position="-10 10 -5"
+      scale="4 4 4"
+      color= "#WWWWWW">
+    </a-text>
+
+    <!-- Camera -->
+      <a-camera 
+      position="0 4 10"
+      rotation="0 0 0">
+    </a-camera>
+
+    <!-- Background Color -->
+    <a-sky color="#262626"></a-sky>
+
     </a-scene>
   </body>
 </html>
