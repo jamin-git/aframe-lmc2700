@@ -311,18 +311,51 @@
 
 
     <!-- Text -->
-    <a-text 
-      value="Use WASD to Move!"
-      position="-10 10 -5"
-      scale="4 4 4"
-      color= "#WWWWWW">
-    </a-text>
 
     <!-- Camera -->
       <a-camera 
+      id="cam"
       position="0 4 10"
-      rotation="0 0 0">
+      rotation="0 0 0"
+      >
+      <a-text
+      value="Use WASD to Move 
+      Press Keys 1-6 to visit different floors 
+      Press Escape to Reset Camera"
+      position="-7.5 -3.5 -5"
+      scale="1 1 1">
+      >
+      </a-text>
     </a-camera>
+
+    <!-- Script To Move Through Floors -->
+    <script>
+      var camera = document.querySelector("#cam");
+      document.addEventListener('keyup', event => {
+        if (event.code === 'Digit1') {
+            camera.setAttribute("position", "0 0 0")
+          }
+        if (event.code === 'Digit2') {
+            camera.setAttribute("position", "0 1 -1")
+          }
+        if (event.code === 'Digit3') {
+            camera.setAttribute("position", "0 2.5 -2")
+          }
+        if (event.code === 'Digit4') {
+            camera.setAttribute("position", "0 3.5 -3")
+          }
+        if (event.code === 'Digit5') {
+            camera.setAttribute("position", "0 5 -4")
+          }
+        if (event.code === 'Digit6') {
+            camera.setAttribute("position", "0 6.5 -5")
+          }
+        if (event.code === 'Escape') {
+            camera.setAttribute("position", "0 4 10")
+            camera.setAttribute("rotation", "0 0 0")
+          }
+    })
+    </script>
 
     <!-- Background Color -->
     <a-sky color="#262626"></a-sky>
