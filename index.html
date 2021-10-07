@@ -6,16 +6,15 @@
      <!-- A-Frame Initialization -->
      <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 
-     <!-- Stylesheet Initialization -->
-     <link rel="stylesheet" href="css/style.css">
-
      <!-- JS Initialization -->
      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
     <title>A-Frame Project Jacob Amin</title>
   </head>
   <body>
-    <a-scene renderer="colorManagement: true">
+    <a-scene>
       <a-assets>
         <!-- "Animated Donkey Kong (Original)" (https://skfb.ly/6CXvX) by Anthony Yanez is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
         <a-asset-item id="DK" src="models/dk/scene.gltf"></a-asset-item>
@@ -27,15 +26,29 @@
         <a-asset-item id="fb" src="models/fireball/scene.gltf"></a-asset-item>
         <!-- "Pixel Art (Mario)" (https://skfb.ly/LHNu) by Alex_F is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
         <a-asset-item id="mario" src="models/mario/scene.gltf"></a-asset-item>
+
+        <a-asset-item id="peach-obj" src="models/peach/peach.obj"></a-asset-item>
+        <a-asset-item id="peach-mtl" src="models/peach/peach.mtl"></a-asset-item>
       </a-assets>
-      
+
+      <!-- Default Lighting -->
+      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+
       <!-- Donkey Kong Model -->
-      <a-entity 
+      <a-entity
+        id="donkeykong"
         gltf-model="#DK"
         animation-mixer="clip: *"
         position="-3.2 6.6 -5"
-        scale="0.008 0.008 0.008a">
+        scale="0.008 0.008 0.008">
       </a-entity>
+      
+      <!-- Lighting to Enhance DK -->
+      <a-entity light="type: point; intensity: 1.5; distance: 10; decay: 2"
+          position="-3.2 7.5 -3"></a-entity>
+      <a-entity light="type: point; intensity: 1.5; distance: 10; decay: 2"
+          position="-3.2 7.5 -7"></a-entity>
 
       <!-- Mario Model -->
       <a-entity 
@@ -43,6 +56,13 @@
         position="-4.5 -1.4 .1"
         scale="0.001 0.001 0.003">
       </a-entity>
+
+      <!-- Peach Model -->
+      <a-entity
+      obj-model="obj: #peach-obj; mtl: #peach-mtl"
+      position="-1 8 -6"
+      scale="0.02 0.02 0.06"
+      ></a-entity>
       
       <!-- Bottom Platform -->
       <a-entity
@@ -243,47 +263,14 @@
 
 
     <!-- Animated Barrel -->
-    <a-entity
-      gltf-model="#barrel"
-      position="-1.5 6.4 -5.2"
-      rotation="0 90 90"
-      scale="0.75 0.75 0.75"
 
-      
-      animation="property: position; from: -1.5 6.4 -5.2; to: .5 6.4 -5.2; dur: 2000;"
-      animation__2="property: position; from: .4 6.4 -5.2; to: 4 6.1 -5.2; delay: 2000; dur: 2000;"
-      animation__3="property: position; from: 4 6.1 -5.2; to: 4 6.1 -4.2; delay: 4000; dur: 1000;"
-      animation__4="property: position; from: 4 6.1 -4.2; to: 4 5.1 -4.2; delay: 5000; dur: 1000;"
-      animation__5="property: rotation; from: 0 90 90; to: 360 90 90; dur: 4000;"
-      
-      animation__6="property: position; from: 4 5.1 -4.2; to: -3.5 4.7 -4.2; delay: 6000; dur: 3000"
-      animation__7="property: position; from: -3.5 4.7 -4.2; to: -3.5 4.7 -3.2; delay: 9000; dur: 1000"
-      animation__8="property: position; from: -3.5 4.7 -3.2; to: -3.5 3.5 -3.2; delay: 10000; dur: 1000"
-      animation__9="property: rotation; from: 360 90 90; to: 0 90 90; delay: 6000; dur: 3000;"
-      
-      animation__10="property: position; from: -3.5 3.5 -3.2; to: 3.9 3.1 -3.2; delay: 11000; dur: 3000"
-      animation__11="property: position; from: 3.9 3.1 -3.2; to: 3.9 3.1 -2.2; delay: 14000; dur: 1000"
-      animation__12="property: position; from: 3.9 3.1 -2.2; to: 3.9 2.1 -2.2; delay: 15000; dur: 1000"
-      animation__13="property: rotation; from: 0 90 90; to: 360 90 90; delay: 11000; dur: 3000;"
-
-      animation__14="property: position; from: 3.9 2.1 -2.2; to: -3.5 1.7 -2.2; delay: 16000; dur: 3000"
-      animation__15="property: position; from: -3.5 1.7 -2.2; to: -3.5 1.7 -1.2; delay: 19000; dur: 1000"
-      animation__16="property: position; from: -3.5 1.7 -1.2; to: -3.5 0.5 -1.2; delay: 20000; dur: 1000"
-      animation__17="property: rotation; from: 360 90 90; to: 0 90 90; delay: 16000; dur: 3000;"
-
-      animation__18="property: position; from: -3.5 0.5 -1.2; to: 3.9 0.1 -1.2; delay: 21000; dur: 3000"
-      animation__19="property: position; from: 3.9 0.1 -1.2; to: 3.9 0.1 -0.2; delay: 24000; dur: 1000"
-      animation__20="property: position; from: 3.9 0.1 -0.2; to: 3.9 -0.8 -0.2; delay: 25000; dur: 1000"
-      animation__21="property: rotation; from: 0 90 90; to: 360 90 90; delay: 21000; dur: 3000;"
-
-      animation__22="property: position; from: 3.9 -0.8 -0.2; to: 0.4 -1.1 -0.2; delay: 26000; dur: 2000;"
-      animation__23="property: position; from: 0.4 -1.1 -0.2; to: -2 -1.1 -0.2; delay: 28000; dur: 2000;"
-      animation__24="property: position; from: -2 -1.1 -0.2; to: -2 -1.1 1.2; delay: 30000; dur: 1000;"
-      animation__25="property: position; from: -2 -1.1 1.2; to: -2 -3.1 1.2; delay: 31000; dur: 2000;"
-      animation__26="property: rotation; from: 360 90 90; to: 0 90 90; delay: 26000; dur: 4000;"
-
-      animation__27="property: scale; from: 0.75 0.75 0.75; to: 0 0 0; delay 33000; dur: 100;"
-      
+      <a-entity
+        id="Abarrel"
+        class="Animated-Barrel"
+        gltf-model="#barrel"
+        position="-1.5 6.4 -5.2"
+        rotation="0 90 90"
+        scale="0.75 0.75 0.75"
       ></a-entity>
 
       <!-- FireBalls -->
@@ -292,7 +279,6 @@
         position="-3 -1 0"
         rotation="0 90 0"
         scale="0.05 0.05 0.05"
-
 
         animation="property: position; from: -3 -1 0; to: -1 -1 0; dir: alternate; loop: true; easing: easeInOutQuad; dur: 4000;"
         animation__2="property: scale; from: 0.05 0.05 0.05; to: 0.075 0.075 0.075; dir: alternate; loop: true; easing: easeInOutQuad; dur: 6000;"
@@ -303,7 +289,6 @@
       position="2 1.7 -2"
       rotation="0 90 0"
       scale="0.075 0.075 0.075"
-
 
       animation="property: position; from: 2 1.7 -2; to: 0 1.6 -2; dir: alternate; loop: true; easing: easeInOutQuad; dur: 4000;"
       animation__2="property: scale; from: 0.075 0.075 0.075; to: 0.05 0.05 0.05; dir: alternate; loop: true; easing: easeInOutQuad; dur: 6000;"
@@ -328,38 +313,17 @@
       </a-text>
     </a-camera>
 
-    <!-- Script To Move Through Floors -->
-    <script>
-      var camera = document.querySelector("#cam");
-      document.addEventListener('keyup', event => {
-        if (event.code === 'Digit1') {
-            camera.setAttribute("position", "0 0 0")
-          }
-        if (event.code === 'Digit2') {
-            camera.setAttribute("position", "0 1 -1")
-          }
-        if (event.code === 'Digit3') {
-            camera.setAttribute("position", "0 2.5 -2")
-          }
-        if (event.code === 'Digit4') {
-            camera.setAttribute("position", "0 3.5 -3")
-          }
-        if (event.code === 'Digit5') {
-            camera.setAttribute("position", "0 5 -4")
-          }
-        if (event.code === 'Digit6') {
-            camera.setAttribute("position", "0 6.5 -5")
-          }
-        if (event.code === 'Escape') {
-            camera.setAttribute("position", "0 4 10")
-            camera.setAttribute("rotation", "0 0 0")
-          }
-    })
-    </script>
-
     <!-- Background Color -->
     <a-sky color="#262626"></a-sky>
 
+    <!-- Script To Move Between Floors -->
+    <script src="view.js"></script>
+
+    <!-- Script To Animate the Barrel via Anime.js -->
+    <script src="animations.js"></script>
+
+    <!-- Script to Repeat Animation -->
+    <script src="animations.js"></script>
     </a-scene>
   </body>
 </html>
